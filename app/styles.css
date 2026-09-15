@@ -1378,12 +1378,15 @@ input[type="checkbox"] { appearance: none; -webkit-appearance: none; }
   }
 
   .header {
+    flex-wrap: wrap;
+    gap: var(--sp-sm);
     padding: var(--sp-sm) 0 var(--sp-md);
   }
 
   .header__reset {
     padding: var(--sp-xs) var(--sp-sm);
     font-size: var(--fs-xs);
+    white-space: normal;
   }
 
   .header__title {
