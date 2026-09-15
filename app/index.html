@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Маршрут — Планировщик путешествия</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="app" id="app">
+
+    <!-- Шапка -->
+    <header class="header">
+      <div class="header__brand">
+        <h1 class="header__title">Маршрут</h1>
+        <p class="header__subtitle">Планировщик путешествия</p>
+      </div>
+      <button class="header__reset" id="global-reset" type="button">Сбросить учебные данные</button>
+    </header>
+
+    <!-- Основной контент -->
+    <main class="main" id="main">
+
+      <!-- Сегодня (мобильный режим) -->
+      <section class="today" id="today" aria-label="Сегодня"></section>
+
+      <!-- Обложка поездки -->
+      <section class="cover" id="cover" aria-label="Обложка поездки"></section>
+
+      <!-- Темп путешествия -->
+      <section class="pace" id="pace" aria-label="Темп путешествия"></section>
+
+      <!-- Маршрут по дням -->
+      <section class="route" id="route" aria-label="Маршрут по дням"></section>
+
+      <!-- Бюджет -->
+      <section class="budget" id="budget" aria-label="Бюджет поездки"></section>
+
+      <!-- Бронирования -->
+      <section class="bookings" id="bookings" aria-label="Бронирования"></section>
+
+      <!-- Чек-лист -->
+      <section class="checklist" id="checklist" aria-label="Чек-лист подготовки"></section>
+
+    </main>
+
+    <!-- Мобильная навигация -->
+    <nav class="mobile-nav" id="mobile-nav" aria-label="Навигация"></nav>
+
+    <!-- Уведомления -->
+    <div class="toast" id="toast" role="alert" aria-live="polite"></div>
+
+    <!-- Скелетоны (loading) -->
+    <div class="skeletons" id="skeletons" aria-hidden="true">
+      <div class="skeletons__grid">
+        <div class="skeleton-card">
+          <div class="skeleton-line skeleton-line--title"></div>
+          <div class="skeleton-line"></div>
+          <div class="skeleton-line skeleton-line--medium"></div>
+          <div class="skeleton-block"></div>
+        </div>
+        <div class="skeleton-card">
+          <div class="skeleton-line skeleton-line--title"></div>
+          <div class="skeleton-line skeleton-line--short"></div>
+          <div class="skeleton-line"></div>
+          <div class="skeleton-line skeleton-line--medium"></div>
+        </div>
+        <div class="skeleton-card">
+          <div class="skeleton-line skeleton-line--title"></div>
+          <div class="skeleton-line"></div>
+          <div class="skeleton-block"></div>
+        </div>
+        <div class="skeleton-card">
+          <div class="skeleton-line skeleton-line--title"></div>
+          <div class="skeleton-line skeleton-line--short"></div>
+          <div class="skeleton-line skeleton-line--medium"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Ошибка -->
+    <div class="error-overlay" id="error-overlay">
+      <div class="error-overlay__icon">⚠️</div>
+      <p class="error-overlay__text">Не удалось загрузить данные поездки</p>
+      <button class="error-overlay__btn" onclick="document.getElementById('error-overlay').classList.remove('visible'); document.getElementById('main').classList.remove('main--error');">Повторить</button>
+    </div>
+
+  </div>
+
+  <!-- Демо-панель -->
+  <div class="demo-panel" id="demo-panel"></div>
+
+  <script src="app.js"></script>
+</body>
+</html>
